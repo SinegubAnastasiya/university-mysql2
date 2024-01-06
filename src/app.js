@@ -1,13 +1,13 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const route = require('./controller/user.controller')
+const express = require('express');
+const bodyParser = require('body-parser');
+const route = require('./controller/user.controller');
 
-const app = express()
+const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-app.use('/user', route)
+app.use('/users', route);
 
-app.use((er, req, res, next) => res.send(er.message))
+app.use((er, req, res, _next) => res.send(er.message));
 
-module.exports = { app }
+module.exports = { app };

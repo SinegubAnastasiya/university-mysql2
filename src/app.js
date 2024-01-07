@@ -6,7 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/users', route);
+app.use('/user', route);
 
 app.use((er, req, res, _next) => res.send(er.message));
 

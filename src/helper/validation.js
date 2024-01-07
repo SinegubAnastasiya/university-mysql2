@@ -15,7 +15,7 @@ function isValidId(req, res, next) {
 }
 
 function isValidInfo(req, res, next) {
-  const { name, surname, city, age } = req.body;
+  const { name, surname, birth, city, age } = req.body;
 
   if (typeof name != 'string') throw new Error('Invalid type of name');
   if (typeof surname != 'string') throw new Error('Invalid type of surname');
@@ -23,6 +23,7 @@ function isValidInfo(req, res, next) {
   if (typeof age != 'string' && typeof age != 'number') throw new Error('Invalid type of age');
   if (!isNaN(name)) throw new Error('Name is not a string');
   if (!isNaN(surname)) throw new Error('Surname is not a string');
+  if (!/^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$/gm.test(birth)) throw new Error('Birth is invalid');
   if (!isNaN(city)) throw new Error('City is not a string');
   if (isNaN(age)) throw new Error('Age is not a number');
   if (age < 0) throw new Error('Invalid age');

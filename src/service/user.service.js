@@ -25,4 +25,10 @@ async function deleteUserById(id) {
   return data;
 }
 
-module.exports = { createUsers, getAllUsers, updateUserById, deleteUserById, getUserById };
+module.exports = {
+  createUsers,
+  getAllUsers,
+  updateUserById,
+  deleteUserById,
+  getUserById,
+};
